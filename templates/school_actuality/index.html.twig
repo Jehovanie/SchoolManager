@@ -18,6 +18,15 @@
 </style>
 
 <div class="example-wrapper">
+    <a href="{{ path('app_register') }}">Inscrivez-vous !</a>
+    
+    {% if app.user %}
+        <a href="{{ path('profile') }}">My Profile</a>
+        <a href="{{ path('logout') }}">Deconnection</a>
+    {% else %}
+        <a href="{{ path('login') }}">Connection</a>
+    {% endif %}
+
     <h1 class="text-primary">Hello {{ controller_name }}! ✅</h1>
 
     This friendly message is coming from:
@@ -30,4 +39,5 @@
         </li>
     </ul>
 </div>
+
 {% endblock %}
