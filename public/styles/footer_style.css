@@ -1,0 +1,10 @@
+.footer{
+    display: block;
+    height: 150px;
+    background-color: lightblue;
+    padding: 25px;
+}
+.content-footer{
+    display: grid;
+    grid-template-columns: 70% 30%;
+}

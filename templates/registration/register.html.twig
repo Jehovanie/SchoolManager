@@ -2,25 +2,51 @@
 
 {% block title %}Register{% endblock %}
 
+{% block stylesheets %}
+<link href="{{ asset('styles/register_style.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
 {% block body %}
+
+
+<div class="container-fluid p-0">
+    <header>
+        <img src="{{asset('images/headerAcceuil.jpeg')}}" alt="">
+    </header>
+    <div class="title-connection">
+        <h2> New Membre </h2>
+    </div>
     {% for flashError in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    <div class="col-12 text-danger erro" role="alert">{{ flashError }}</div>
     {% endfor %}
+    <secion class="content-body">
+        <div class="content-form">
 
-    <h1>Register</h1>
+            {{ form_start(registrationForm, {'attr':{'class': "form-group" }}) }}
+            {{ form_row(registrationForm.lastname , {'attr':{'class': "form-control inputform",'placeholder':' lastname'
+            }}) }}
+            {{ form_row(registrationForm.firstname , {'attr':{'class': "form-control
+            inputform",'placeholder':'firstname'}}) }}
+            {{ form_row(registrationForm.matricule , {'attr':{'class': "form-control
+            inputform",'placeholder':'matricule' }}) }}
+            {{ form_row(registrationForm.email , {'attr':{'class': "form-control
+            inputform",'placeholder':'name@gmail.com' }}) }}
+            {{ form_row(registrationForm.plainPassword, {'attr':{'class': "form-control" }}) }}
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.lastname) }}
-        {{ form_row(registrationForm.firstname) }}
-        {{ form_row(registrationForm.matricule) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+            {{ form_row(registrationForm.agreeTerms , {'attr':{'class': "mx-3" }}) }}
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
-        Si vous avez deja un compte <a href="{{ path('login')}}">click-ici</a>
+            <button class="btn btn-primary" type="submit" class="btn">Register</button>
+            {{ form_end(registrationForm) }}
+
+            <div class="sign-in">
+                Si vous avez deja un compte <a href="{{ path('login')}}">click-ici</a>
+            </div>
+        </div>
+        </section>
+</div>
+
+{% for flashError in app.flashes('verify_email_error') %}
+<div class="alert alert-danger" role="alert">{{ flashError }}</div>
+{% endfor %}
 
 {% endblock %}

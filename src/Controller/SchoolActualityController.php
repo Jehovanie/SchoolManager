@@ -19,10 +19,12 @@ class SchoolActualityController extends AbstractController
     }
 
     /**
-     * @Route("/profle", name="profile")
+     * @Route("/profile", name="profile")
      */
     public function userProfil(): Response
     {
+
+
         return $this->render('school_actuality/profile.html.twig', [
             'controller_name' => 'User Profil',
         ]);

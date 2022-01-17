@@ -1,26 +1,43 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello LoginController!{% endblock %}
+{% block title %}Login{% endblock %}
+
+{% block stylesheets %}
+<link href="{{ asset('styles/login_style.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
 
 {% block body %}
 
-{% if error %}
-<div> {{ error.messageKey | trans(error.messageData, 'security') }} </div>
-{% endif %}
+<div class="container-fluid p-0">
+    <header>
+        <img src="{{asset('images/headerAcceuil.jpeg')}}" alt="">
+    </header>
+    <div class="title-connection">
+        <h2> Connection</h2>
+    </div>
+    {% if error %}
+    <div class="col-12 text-danger error"> {{ error.messageKey | trans(error.messageData, 'security') }} </div>
+    {% endif %}
+    <secion class="content-body">
+        <div class="content-form">
 
-<form action="{{ path('login') }}" method="post">
-    <label for="username">Email:</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" />
+            <form class="form-group" action="{{ path('login') }}" method="post">
+                <label for="username">Email:</label>
+                <input class="form-control" type="text" id="username" name="_username" placeholder="your email"
+                    value="{{ last_username }}" />
+                <label for="password">Password:</label>
+                <input class="form-control" type="password" id="password" name="_password" placeholder="passworld" />
+                <input class="form-control" type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="_password" />
-    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                {# If you want to control the URL the user is redirected to on success
+                <input type="hidden" name="_target_path" value="/account" /> #}
 
-    {# If you want to control the URL the user is redirected to on success
-    <input type="hidden" name="_target_path" value="/account" /> #}
-
-    <button type="submit">login</button>
-</form>
-        Si vous n'êtez pas encore inscrit <a href="{{ path('app_register')}}">click-ici</a>
-
+                <button class="btn btn-primary" type="submit">login</button>
+            </form>
+            <div class="sign-in">
+                Si vous n'êtez pas encore inscrit <a href="{{ path('app_register')}}">click-ici</a>
+            </div>
+        </div>
+        </section>
+</div>
 {% endblock %}

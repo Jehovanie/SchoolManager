@@ -1,0 +1,81 @@
+*{
+    margin : 0;
+    padding : 0;
+}
+header{
+    display: block;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+}
+.title-connection{
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    background-color: lightblue;
+    border-radius: 15px;
+    border : none;
+    padding: 25px;
+
+    transform :translateY(-65%);
+    opacity: 0.8;
+}
+.title-connection h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+header img{
+    display: block;
+    width: 100vw;
+    height: 450px;
+}
+
+.content-form{
+    display: block;
+    width: calc(100% - 100px);
+    margin: 0 auto;
+    margin-bottom: 25px;
+    padding: 25px;
+    background-color: rgb(213, 218, 220);
+    opacity: 0.8;
+    height: 700px;
+    border-radius: 5px;
+}
+.content-form label{
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+.inputform{
+    border : none;
+    padding: 15px;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+.sign-in{
+    display: flex;
+    justify-content: end;
+    font-style: italic;
+}
+.sign-in a {
+    margin-left: 10px;
+}
+.error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    width: calc(100% - 100px);
+    margin : 0 auto;
+    margin-bottom: 45px;
+    height: 55px;
+    background-color: rgb(223, 170, 170) ;
+    font-weight: bolder;
+    font-style: italic;
+    font-size:1.5rem;
+}

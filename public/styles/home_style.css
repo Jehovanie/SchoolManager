@@ -1,0 +1,94 @@
+*{
+    margin : 0;
+    padding : 0;
+}
+header{
+    display: block;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+}
+header img{
+    display: block;
+    width: 100vw;
+    height: 450px;
+}
+
+.content-image{
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+    position: absolute;
+    top : 10px;
+    right: -5px;
+    transform: translateX(-50%);
+}
+.content-image img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.content-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: start;
+
+    position: relative;
+    top : -15px;
+}
+.content-menu a{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    width: 15%;
+    height : 45px;
+
+    background-color:lightblue;
+    color : white;
+    font-weight:bold;
+    padding : 10px;
+    transition: 0.5s;
+}
+#active{
+    background-color:blue;
+}
+
+.content-menu a:hover{
+    background-color:blue;
+    color : white;
+    font-weight:bolder;
+}
+.content-body{
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+.content-actualite{
+    padding: 25px;
+}
+.content-oneday{
+    display: block;
+    
+}
+.event-week{
+    height: 450px;
+    background-color: lightblue;
+    padding : 25px;
+}
+.content-eventweek{
+    display: block;
+}
+.content-eventweek a{
+    display: block;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: 0.2s;
+}
+.content-eventweek a:hover{
+    color : blue;
+}

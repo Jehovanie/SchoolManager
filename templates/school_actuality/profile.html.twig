@@ -1,9 +1,80 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello Profile page {% endblock %}
+{% block title %} Mon profil{% endblock %}
+
+{% block stylesheets %}
+<link href="{{ asset('styles/profile-style.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
 
 {% block body %}
 
-profile pages ....
+<div class="container-fluid p-0">
+    <header>
+        <img src="{{asset('images/headerAcceuil.jpeg')}}" alt="fond-arrière">
+    </header>
+    <div class="content-image">
+        <img src="{{asset('images/profil.jpeg')}}" alt="fond-profile">
+    </div>
+    <div class="content-menu">
+        <a href="{{ path('school_actuality') }}">Actualite</a>
+        <a href="#">Calendrie </a>
+        {% if app.user %}
+        <a id="active" href="{{ path('profile') }}">My Profile</a>
+        <a href="{{ path('logout') }}">Deconnection</a>
+        {% else %}
+        <a href="{{ path('login') }}">Connection</a>
+        {% endif %}
+    </div>
+    <secion class="content-body">
+        <div class="content-actualite">
+            <h1>Taches de travail</h1>
+            <div class="content-oneday">
+                <span> date </span>
+                <p> Lorem ipsum dolor sit amet</p>
+            </div>
+            <div class="content-oneday">
+                <span> date </span>
+                <p> Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="content-oneday">
+                <span> date </span>
+                <p> Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="content-oneday">
+                <span> date </span>
+                <p> Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="content-oneday">
+                <span> date </span>
+                <p> Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="content-oneday">
+                <span> date </span>
+                <p> Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="content-oneday">
+                <span> date </span>
+                <p> Lorem ipsum dolor sit amet.</p>
+            </div>
 
-{% endblock%}
+        </div>
+        <div class="event-week">
+            <h1>A-propos de moi</h1>
+            <div class="content-apropos">
+                <div class="a-propos">
+                    <p>Nom : <span>{{ app.user.lastname}}</span></p>
+                </div>
+                <div class="a-propos">
+                    <p>Prenom : <span>{{ app.user.firstname}}</span></p>
+                </div>
+                <div class="a-propos">
+                    <p>Email : <span>{{ app.user.email}}</span></p>
+                </div>
+                <div class="a-propos">
+                    <p>Matricule : <span>{{ app.user.matricule}}</span></p>
+                </div>
+            </div>
+        </div>
+        </section>
+</div>
+{% endblock %}
